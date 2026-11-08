@@ -115,13 +115,6 @@
             <p>Professional installation of a variety of flooring types, with attention to layout and clean transitions.</p>
           </article>
 
-          <article class="card service-card">
-            <div class="icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M12 22V12M12 12c0-5 4-8 8-8 0 5-3 8-8 8zM12 15c0-4-3-6-7-6 0 4 3 6 7 6z"/></svg>
-            </div>
-            <h3>Landscaping &amp; Property Maintenance</h3>
-            <p>Ongoing and one-time property care to keep your grounds tidy, safe, and welcoming.</p>
-          </article>
 
           <article class="card service-card">
             <div class="icon" aria-hidden="true">
@@ -153,42 +146,68 @@
         </div>
 
         <!--
-          GALLERY: To use your own photos, drop them into assets/images/ and change
-          the "src" (thumbnail) and "data-full" (large lightbox version) on each button's <img>.
-          Update the alt text to describe the real photo.
+          GALLERY: Each project is one button. To use real photos, drop them in assets/images/
+          and edit that button's data-images (photo list, separated by |) and data-captions
+          (one caption per photo, same order). The first photo is the thumbnail. Add or remove
+          photos freely - any number works. Update the thumbnail <img> src and alt text too.
+          To add a project, copy a whole <button class="gallery-item"> block.
         -->
         <div class="gallery">
-          <button class="gallery-item" type="button" data-full="assets/images/project-1.svg" data-caption="Interior renovation (placeholder image)">
-            <img src="assets/images/project-1.svg" alt="Placeholder image: interior renovation" loading="lazy" width="800" height="600">
+          <button class="gallery-item" type="button"
+                  data-images="assets/images/project-1-1.svg|assets/images/project-1-2.svg|assets/images/project-1-3.svg"
+                  data-captions="Living space with window|Open wall framing|Doorway and ceiling detail"
+                  data-title="Interior Renovation">
+            <img src="assets/images/project-1-1.svg" alt="Placeholder image: interior renovation" loading="lazy" width="800" height="600">
+            <span class="gallery-count" aria-hidden="true">3 photos</span>
             <span class="gallery-label">Interior Renovation</span>
           </button>
-          <button class="gallery-item" type="button" data-full="assets/images/project-2.svg" data-caption="Finish carpentry and trim (placeholder image)">
-            <img src="assets/images/project-2.svg" alt="Placeholder image: finish carpentry and trim work" loading="lazy" width="800" height="600">
+          <button class="gallery-item" type="button"
+                  data-images="assets/images/project-2-1.svg|assets/images/project-2-2.svg|assets/images/project-2-3.svg"
+                  data-captions="Baseboard corner profile|Crown molding|Window casing"
+                  data-title="Finish Carpentry &amp; Trim">
+            <img src="assets/images/project-2-1.svg" alt="Placeholder image: finish carpentry &amp; trim" loading="lazy" width="800" height="600">
+            <span class="gallery-count" aria-hidden="true">3 photos</span>
             <span class="gallery-label">Finish Carpentry &amp; Trim</span>
           </button>
-          <button class="gallery-item" type="button" data-full="assets/images/project-3.svg" data-caption="Flooring installation (placeholder image)">
-            <img src="assets/images/project-3.svg" alt="Placeholder image: flooring installation" loading="lazy" width="800" height="600">
+          <button class="gallery-item" type="button"
+                  data-images="assets/images/project-3-1.svg|assets/images/project-3-2.svg|assets/images/project-3-3.svg"
+                  data-captions="Plank flooring|Herringbone pattern|Tile layout"
+                  data-title="Flooring Installation">
+            <img src="assets/images/project-3-1.svg" alt="Placeholder image: flooring installation" loading="lazy" width="800" height="600">
+            <span class="gallery-count" aria-hidden="true">3 photos</span>
             <span class="gallery-label">Flooring Installation</span>
           </button>
-          <button class="gallery-item" type="button" data-full="assets/images/project-4.svg" data-caption="Drywall finishing (placeholder image)">
-            <img src="assets/images/project-4.svg" alt="Placeholder image: drywall finishing" loading="lazy" width="800" height="600">
+          <button class="gallery-item" type="button"
+                  data-images="assets/images/project-4-1.svg|assets/images/project-4-2.svg|assets/images/project-4-3.svg"
+                  data-captions="Sheets hung on studs|Taped seam|Corner bead"
+                  data-title="Drywall Finishing">
+            <img src="assets/images/project-4-1.svg" alt="Placeholder image: drywall finishing" loading="lazy" width="800" height="600">
+            <span class="gallery-count" aria-hidden="true">3 photos</span>
             <span class="gallery-label">Drywall Finishing</span>
           </button>
-          <button class="gallery-item" type="button" data-full="assets/images/project-5.svg" data-caption="Interior painting (placeholder image)">
-            <img src="assets/images/project-5.svg" alt="Placeholder image: interior painting" loading="lazy" width="800" height="600">
+          <button class="gallery-item" type="button"
+                  data-images="assets/images/project-5-1.svg|assets/images/project-5-2.svg|assets/images/project-5-3.svg"
+                  data-captions="Roller and wall|Color swatches|Finished room"
+                  data-title="Interior Painting">
+            <img src="assets/images/project-5-1.svg" alt="Placeholder image: interior painting" loading="lazy" width="800" height="600">
+            <span class="gallery-count" aria-hidden="true">3 photos</span>
             <span class="gallery-label">Interior Painting</span>
           </button>
-          <button class="gallery-item" type="button" data-full="assets/images/project-6.svg" data-caption="Exterior improvements (placeholder image)">
-            <img src="assets/images/project-6.svg" alt="Placeholder image: exterior improvements" loading="lazy" width="800" height="600">
+          <button class="gallery-item" type="button"
+                  data-images="assets/images/project-6-1.svg|assets/images/project-6-2.svg|assets/images/project-6-3.svg"
+                  data-captions="Front elevation|Deck and railing|Siding and windows"
+                  data-title="Exterior Improvements">
+            <img src="assets/images/project-6-1.svg" alt="Placeholder image: exterior improvements" loading="lazy" width="800" height="600">
+            <span class="gallery-count" aria-hidden="true">3 photos</span>
             <span class="gallery-label">Exterior Improvements</span>
           </button>
-          <button class="gallery-item" type="button" data-full="assets/images/project-7.svg" data-caption="Kitchen remodel (placeholder image)">
-            <img src="assets/images/project-7.svg" alt="Placeholder image: kitchen remodel" loading="lazy" width="800" height="600">
+          <button class="gallery-item" type="button"
+                  data-images="assets/images/project-7-1.svg|assets/images/project-7-2.svg|assets/images/project-7-3.svg"
+                  data-captions="Cabinets and counter|Island with pendants|Backsplash tile"
+                  data-title="Kitchen Remodel">
+            <img src="assets/images/project-7-1.svg" alt="Placeholder image: kitchen remodel" loading="lazy" width="800" height="600">
+            <span class="gallery-count" aria-hidden="true">3 photos</span>
             <span class="gallery-label">Kitchen Remodel</span>
-          </button>
-          <button class="gallery-item" type="button" data-full="assets/images/project-8.svg" data-caption="Property maintenance (placeholder image)">
-            <img src="assets/images/project-8.svg" alt="Placeholder image: property maintenance" loading="lazy" width="800" height="600">
-            <span class="gallery-label">Property Maintenance</span>
           </button>
         </div>
       </div>
@@ -301,7 +320,6 @@
               <option>Drywall &amp; Painting</option>
               <option>Finish Carpentry &amp; Trim</option>
               <option>Flooring Installation</option>
-              <option>Landscaping &amp; Property Maintenance</option>
               <option>Exterior Improvements</option>
               <option>Custom Project</option>
               <option>Other / Not Sure</option>

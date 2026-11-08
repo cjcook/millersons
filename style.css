@@ -180,7 +180,7 @@ h1, h2, h3 {
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(14, 15, 17, 0.62);
+  background: rgba(14, 15, 17, 0.45);
 }
 .hero-content { position: relative; padding-block: 5rem; max-width: 1180px; }
 .eyebrow {
@@ -284,6 +284,20 @@ h1, h2, h3 {
   letter-spacing: 0.08em;
   text-transform: uppercase;
   background: linear-gradient(transparent, rgba(0, 0, 0, 0.75));
+}
+
+.gallery-count {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  padding: 0.2rem 0.6rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--black);
+  background: var(--accent);
+  border-radius: var(--radius);
 }
 
 /* ---------- Why Us ---------- */
