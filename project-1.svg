@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-label="Interior Renovation placeholder">
+<rect width="800" height="600" fill="#25282c"/>
+<g stroke="#ffffff" stroke-opacity="0.05" stroke-width="1"><path d="M0 0V600"/><path d="M50 0V600"/><path d="M100 0V600"/><path d="M150 0V600"/><path d="M200 0V600"/><path d="M250 0V600"/><path d="M300 0V600"/><path d="M350 0V600"/><path d="M400 0V600"/><path d="M450 0V600"/><path d="M500 0V600"/><path d="M550 0V600"/><path d="M600 0V600"/><path d="M650 0V600"/><path d="M700 0V600"/><path d="M750 0V600"/><path d="M0 0H800"/><path d="M0 50H800"/><path d="M0 100H800"/><path d="M0 150H800"/><path d="M0 200H800"/><path d="M0 250H800"/><path d="M0 300H800"/><path d="M0 350H800"/><path d="M0 400H800"/><path d="M0 450H800"/><path d="M0 500H800"/><path d="M0 550H800"/></g>
+<g fill="none" stroke="#c9a24a" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" transform="translate(400 255) scale(5) translate(-12 -12)"><path d="M4 20V8l8-5 8 5v12M4 20h16M9 20v-7h6v7"/></g>
+<text x="400" y="440" font-family="Arial,sans-serif" font-size="34" font-weight="700" letter-spacing="4" text-anchor="middle" fill="#ffffff">INTERIOR RENOVATION</text>
+<text x="400" y="480" font-family="Arial,sans-serif" font-size="20" letter-spacing="3" text-anchor="middle" fill="#9aa0a8">PLACEHOLDER - REPLACE WITH PROJECT PHOTO</text>
+</svg>
