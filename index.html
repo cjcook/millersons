@@ -23,13 +23,9 @@
   <!-- ===================== HEADER / NAVIGATION ===================== -->
   <header class="site-header" id="top">
     <div class="container header-inner">
-      <!-- LOGO PLACEHOLDER: swap this block for <img src="assets/logo.svg" alt="..."> when you have a logo -->
+      <!-- LOGO: assets/logo.svg. To change the size, edit .brand-logo in style.css -->
       <a href="#top" class="brand" aria-label="Miller &amp; Sons Construction Services LLC - back to top">
-        <span class="brand-mark" aria-hidden="true">M&amp;S</span>
-        <span class="brand-text">
-          <span class="brand-name">Miller &amp; Sons</span>
-          <span class="brand-sub">Construction Services LLC</span>
-        </span>
+        <img src="assets/images/logo.svg" alt="Miller &amp; Sons Construction Services LLC" class="brand-logo" width="220" height="48">
       </a>
 
       <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle navigation menu">
@@ -44,6 +40,8 @@
           <li><a href="#contact">Contact</a></li>
         </ul>
         <a href="#contact" class="btn btn-primary btn-nav">Request an Estimate</a>
+        <!-- HEADER PHONE: number and tel: link are set from CONFIG.phone in script.js -->
+        <a class="header-phone" data-contact="phone" href="tel:5555550123" aria-label="Call us">(555) 555-0123</a>
       </nav>
     </div>
   </header>
