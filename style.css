@@ -197,11 +197,13 @@ h1, h2, h3 {
   color: var(--white);
   overflow: hidden;
 }
-/* HERO IMAGE: swap this URL for a real photo, e.g. url("assets/images/hero.jpg") */
+/* HERO IMAGE: currently uses assets/images/hero.png.
+   To switch back to the placeholder SVG, comment out the PNG line and un-comment the SVG line. */
 .hero-bg {
   position: absolute;
   inset: 0;
-  background: var(--charcoal) url("assets/images/hero.svg") center / cover no-repeat;
+  /* background: var(--charcoal) url("assets/images/hero.svg") center / cover no-repeat; */
+  background: var(--charcoal) url("assets/images/hero.png") center / cover no-repeat;
 }
 .hero-overlay {
   position: absolute;
