@@ -9,9 +9,9 @@
    -------------------------------------------------------------------------- */
 const CONFIG = {
   company: "Miller & Sons Construction Services LLC",
-  email: "your-email@example.com",      // PLACEHOLDER: replace with the company email
-  phone: "(555) 555-0123",              // PLACEHOLDER: replace with the company phone
-  area: "[Add your service area, e.g. City / County / Region]", // PLACEHOLDER
+  email: "info@millersons.construction",      // PLACEHOLDER: replace with the company email
+  phone: "(716) 800-1630",              // PLACEHOLDER: replace with the company phone
+  area: "11782 Main St, Perrysburg, NY 14129", // PLACEHOLDER
   emailSubject: "New Construction Estimate Request"
 };
 
