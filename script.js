@@ -153,17 +153,14 @@ function initLightbox() {
 }
 
 /* --------------------------------------------------------------------------
-   5. CONTACT FORM  (mailto: approach)
-   IMPORTANT: This is a static site with no backend, so the form cannot send
-   email by itself. On submit we validate the fields, build the email text, and
-   open the visitor's DEFAULT EMAIL APP via a mailto: link with everything
-   pre-filled. The visitor must still press "Send" in their email app, and this
-   only works if they have an email app configured on their device.
+   5. CONTACT FORM (Formspree)
    -------------------------------------------------------------------------- */
 function initForm() {
   const form = document.getElementById("estimate-form");
   const status = document.getElementById("form-status");
-  if (!form) return;
+  if (!form || !status) return;
+
+  const FORMSPREE_ENDPOINT = "https://formspree.io/f/xjywyeye";
 
   const fields = {
     name: document.getElementById("name"),
@@ -174,11 +171,13 @@ function initForm() {
   };
 
   const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+  const submitButton = form.querySelector('button[type="submit"]');
+  const originalButtonText = submitButton ? submitButton.textContent : "";
 
   function setError(input, message) {
     const wrap = input.closest(".field");
     const out = document.getElementById(input.id + "-error");
-    wrap.classList.toggle("invalid", Boolean(message));
+    if (wrap) wrap.classList.toggle("invalid", Boolean(message));
     input.setAttribute("aria-invalid", message ? "true" : "false");
     if (out) out.textContent = message || "";
   }
@@ -207,38 +206,57 @@ function initForm() {
     return !firstBad;
   }
 
-  // Clear an error as soon as the visitor edits that field
   Object.values(fields).forEach(function (input) {
     input.addEventListener("input", function () { setError(input, ""); });
     input.addEventListener("change", function () { setError(input, ""); });
   });
 
-  form.addEventListener("submit", function (e) {
+  form.addEventListener("submit", async function (e) {
     e.preventDefault();
     status.textContent = "";
+    status.style.color = "";
+
     if (!validate()) return;
 
-    // Plain-text email body (line breaks become %0D%0A through encodeURIComponent)
-    const body = [
-      "New estimate request from the " + CONFIG.company + " website",
-      "",
-      "Name: " + fields.name.value.trim(),
-      "Email: " + fields.email.value.trim(),
-      "Phone: " + fields.phone.value.trim(),
-      "Project Type: " + fields.type.value,
-      "",
-      "Project Details:",
-      fields.details.value.trim()
-    ].join("\r\n");
+    if (FORMSPREE_ENDPOINT.includes("YOUR_FORM_ID")) {
+      status.textContent = "Add your Formspree form ID in script.js before publishing this form.";
+      status.style.color = "#b3261e";
+      return;
+    }
 
-    const mailto = "mailto:" + encodeURIComponent(CONFIG.email).replace("%40", "@") +
-      "?subject=" + encodeURIComponent(CONFIG.emailSubject) +
-      "&body=" + encodeURIComponent(body);
+    if (submitButton) {
+      submitButton.disabled = true;
+      submitButton.textContent = "Sending...";
+    }
 
-    status.textContent = "Opening your email app. Please press Send there to deliver your request. " +
-      "If nothing opened, email us at " + CONFIG.email + ".";
+    try {
+      const response = await fetch(FORMSPREE_ENDPOINT, {
+        method: "POST",
+        body: new FormData(form),
+        headers: { "Accept": "application/json" }
+      });
+      const result = await response.json().catch(function () { return {}; });
 
-    window.location.href = mailto;
+      if (response.ok) {
+        form.reset();
+        Object.values(fields).forEach(function (input) { setError(input, ""); });
+        status.textContent = "Thank you! Your estimate request has been sent successfully. We will be in touch soon.";
+        status.style.color = "#1e6b3a";
+      } else {
+        status.textContent = result.errors && result.errors.length
+          ? result.errors.map(function (error) { return error.message; }).join(" ")
+          : "We couldn't send your request. Please try again or contact us by phone or email.";
+        status.style.color = "#b3261e";
+      }
+    } catch (error) {
+      status.textContent = "A connection error prevented your request from sending. Please try again or contact us by phone or email.";
+      status.style.color = "#b3261e";
+    } finally {
+      if (submitButton) {
+        submitButton.disabled = false;
+        submitButton.textContent = originalButtonText;
+      }
+    }
   });
 }
 

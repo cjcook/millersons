@@ -42,7 +42,7 @@
         </ul>
         <a href="#contact" class="btn btn-primary btn-nav">Request an Estimate</a>
         <!-- HEADER PHONE: number and tel: link are set from CONFIG.phone in script.js -->
-        <a class="header-phone" data-contact="phone" href="tel:7168001630" aria-label="Call us">(716) 800-1630</a>
+        <a class="header-phone" data-contact="phone" href="tel:7168001040" aria-label="Call us">(716) 800-1040</a>
       </nav>
     </div>
   </header>
@@ -262,7 +262,7 @@
         <div class="contact-info">
           <p class="eyebrow">Contact</p>
           <h2 id="contact-title">Request an Estimate</h2>
-          <p class="section-intro">Tell us about your project and we'll get back to you. Fill out the form and your email app will open with your request ready to send.</p>
+          <p class="section-intro">Tell us about your project and we'll get back to you.</p>
 
           <!--
             CONTACT DETAILS: edit the values in the CONFIG block at the top of script.js.
@@ -275,7 +275,7 @@
             </li>
             <li>
               <span class="contact-label">Phone</span>
-              <a data-contact="phone" href="#contact">(716) 800-1630</a>
+              <a data-contact="phone" href="#contact">(716) 800-1040</a>
             </li>
             <li>
               <span class="contact-label">Email</span>
@@ -283,12 +283,12 @@
             </li>
             <li>
               <span class="contact-label">Service Area</span>
-              <span data-contact="area">11782 Main St, Perrysburg, NY 14129</span>
+              <span data-contact="area">Western New York</span>
             </li>
           </ul>
         </div>
 
-        <form class="contact-form" id="estimate-form" novalidate aria-labelledby="form-heading">
+        <form class="contact-form" id="estimate-form" action="https://formspree.io/f/xjywyeye" method="POST" novalidate aria-labelledby="form-heading">
           <h3 id="form-heading">Estimate Request Form</h3>
 
           <div class="field">
@@ -331,12 +331,10 @@
             <p class="error" id="details-error" role="alert"></p>
           </div>
 
+          <input type="hidden" name="_subject" value="New Construction Estimate Request">
           <button type="submit" class="btn btn-primary btn-block">Send Estimate Request</button>
 
-          <p class="form-note">
-            This opens your default email app with your request filled in. You'll still need to press Send there.
-            If nothing opens, no email app is set up on this device; you can email or call us using the details shown here.
-          </p>
+          <p class="form-note">Your request will be sent securely. We will contact you as soon as possible.</p>
           <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
         </form>
       </div>
