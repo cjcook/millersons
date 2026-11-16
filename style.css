@@ -203,7 +203,7 @@ h1, h2, h3 {
   position: absolute;
   inset: 0;
   /* background: var(--charcoal) url("assets/images/hero.svg") center / cover no-repeat; */
-  background: var(--charcoal) url("assets/images/hero.png") center / cover no-repeat;
+  background: var(--charcoal) url("assets/images/hero.png") center / contain no-repeat;
 }
 .hero-overlay {
   position: absolute;
